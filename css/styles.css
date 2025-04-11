@@ -28,4 +28,26 @@ body {
 .thumbnail {
     height: 180px;
     background-color: #ddd;
+    object-fit: cover;
+}
+.search-container {
+    max-width: 600px;
+}
+@media (max-width: 768px) {
+    .search-container {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .navbar-brand img {
+        height: 20px;
+    }
+    .thumbnail {
+        height: 150px;
+    }
+}
+@media (max-width: 576px) {
+    .thumbnail {
+        height: 120px;
+    }
 }

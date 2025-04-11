@@ -13,20 +13,20 @@
 </head>
 <body>
     <!-- Barra de navegación (Navbar) -->
-    <nav class="navbar navbar-expand-md navbar-light sticky-top">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container-fluid flex-lg-nowrap flex-wrap">
             <!-- Logo y menú hamburguesa -->
             <div class="d-flex align-items-center">
-                <button class="btn btn-light me-2">
+                <button class="btn btn-light me-2 d-lg-none">
                     <i class="bi bi-list"></i>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img src="https://www.youtube.com/yts/img/yt_1200-vfl4C3T0K.png" alt="YouTube" height="100">
+                    <img src="https://www.youtube.com/yts/img/yt_1200-vfl4C3T0K.png" alt="YouTube" height="30">
                 </a>
             </div>
 
-            <!-- Barra de búsqueda -->
-            <div class="d-flex flex-grow-1 mx-3">
+            <!-- Barra de búsqueda - Se mueve abajo en móvil -->
+            <div class="d-flex flex-grow-1 mx-lg-3 search-container">
                 <div class="input-group w-100">
                     <input type="text" class="form-control rounded-start-pill" placeholder="Buscar">
                     <button class="btn btn-outline-secondary rounded-end-pill" type="button">
@@ -36,28 +36,64 @@
             </div>
 
             <!-- Iconos derecha -->
-            <div class="d-flex">
-                <button class="btn btn-light mx-2 d-none d-md-block">
+            <div class="d-flex order-lg-3">
+                <button class="btn btn-light mx-2 d-none d-lg-block">
                     <i class="bi bi-camera-video"></i>
                 </button>
-                <button class="btn btn-light mx-2 d-none d-md-block">
+                <button class="btn btn-light mx-2 d-none d-lg-block">
                     <i class="bi bi-grid-3x3-gap"></i>
                 </button>
                 <button class="btn btn-light mx-2">
                     <i class="bi bi-bell"></i>
                 </button>
-                <button class="btn btn-light ms-2">
+                <button class="btn btn-light ms-2 d-none d-sm-block">
                     <i class="bi bi-person-circle"></i>
+                </button>
+                <button class="btn btn-light ms-2 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
+                    <i class="bi bi-list"></i>
                 </button>
             </div>
         </div>
     </nav>
 
+    <!-- Sidebar móvil (Offcanvas) -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menú</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex flex-column">
+                <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
+                    <i class="bi bi-house-door me-3"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
+                    <i class="bi bi-fire me-3"></i>
+                    <span>Tendencias</span>
+                </a>
+                <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
+                    <i class="bi bi-collection-play me-3"></i>
+                    <span>Suscripciones</span>
+                </a>
+                <hr>
+                <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
+                    <i class="bi bi-clock-history me-3"></i>
+                    <span>Historial</span>
+                </a>
+                <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
+                    <i class="bi bi-clock me-3"></i>
+                    <span>Ver más tarde</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Contenido principal -->
     <div class="container-fluid">
         <div class="row">
-            <!-- Sidebar -->
-            <div class="sidebar col-md-2 bg-white d-none d-md-block p-3">
+            <!-- Sidebar desktop -->
+            <div class="sidebar col-lg-2 bg-white d-none d-lg-block p-3">
                 <div class="d-flex flex-column">
                     <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
                         <i class="bi bi-house-door me-3"></i>
@@ -84,12 +120,12 @@
             </div>
 
             <!-- Videos -->
-            <div class="col-md-10 col-12 p-4">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <div class="col-lg-10 col-12 p-3">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
                     <!-- Video 1 -->
                     <div class="col">
                         <div class="video-card card h-100 border-0 shadow-sm">
-                            <div class="thumbnail card-img-top"></div>
+                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" class="thumbnail card-img-top" alt="Miniatura">
                             <div class="card-body">
                                 <h6 class="card-title">Cómo aprender Bootstrap 5</h6>
                                 <p class="card-text text-muted small">Web Dev Tutorials</p>
@@ -101,7 +137,7 @@
                     <!-- Video 2 -->
                     <div class="col">
                         <div class="video-card card h-100 border-0 shadow-sm">
-                            <div class="thumbnail card-img-top"></div>
+                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" class="thumbnail card-img-top" alt="Miniatura">
                             <div class="card-body">
                                 <h6 class="card-title">Flexbox vs Grid CSS</h6>
                                 <p class="card-text text-muted small">CSS Masters</p>
@@ -111,6 +147,27 @@
                     </div>
 
                     <!-- Más videos... -->
+                    <div class="col">
+                        <div class="video-card card h-100 border-0 shadow-sm">
+                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" class="thumbnail card-img-top" alt="Miniatura">
+                            <div class="card-body">
+                                <h6 class="card-title">JavaScript Moderno</h6>
+                                <p class="card-text text-muted small">JS Expert</p>
+                                <p class="card-text text-muted small">1.2M vistas · Hace 1 mes</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="video-card card h-100 border-0 shadow-sm">
+                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" class="thumbnail card-img-top" alt="Miniatura">
+                            <div class="card-body">
+                                <h6 class="card-title">React desde cero</h6>
+                                <p class="card-text text-muted small">React Pro</p>
+                                <p class="card-text text-muted small">950K vistas · Hace 3 meses</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
