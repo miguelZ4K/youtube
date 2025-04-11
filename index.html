@@ -3,30 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube con Bootstrap</title>
-    <!-- Bootstrap CSS -->
+    <title>YouTube Responsivo Definitivo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Barra de navegación (Navbar) -->
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container-fluid flex-lg-nowrap flex-wrap">
-            <!-- Logo y menú hamburguesa -->
+        <div class="container-fluid">
             <div class="d-flex align-items-center">
-                <button class="btn btn-light me-2 d-lg-none">
-                    <i class="bi bi-list"></i>
-                </button>
+                <div class="toggle-sidebar me-2 d-lg-none">
+                    <i class="bi bi-list fs-5"></i>
+                </div>
                 <a class="navbar-brand" href="#">
-                    <img src="https://www.youtube.com/yts/img/yt_1200-vfl4C3T0K.png" alt="YouTube" height="30">
+                    <img src="https://www.youtube.com/yts/img/yt_1200-vfl4C3T0K.png" alt="YouTube" height="24">
                 </a>
             </div>
 
-            <!-- Barra de búsqueda - Se mueve abajo en móvil -->
-            <div class="d-flex flex-grow-1 mx-lg-3 search-container">
-                <div class="input-group w-100">
+            <div class="search-container flex-grow-1 mx-lg-3">
+                <div class="input-group">
                     <input type="text" class="form-control rounded-start-pill" placeholder="Buscar">
                     <button class="btn btn-outline-secondary rounded-end-pill" type="button">
                         <i class="bi bi-search"></i>
@@ -34,145 +29,108 @@
                 </div>
             </div>
 
-            <!-- Iconos derecha -->
-            <div class="d-flex order-lg-3">
-                <button class="btn btn-light mx-2 d-none d-lg-block">
+            <div class="d-flex">
+                <button class="btn btn-light mx-1 d-none d-lg-block">
                     <i class="bi bi-camera-video"></i>
                 </button>
-                <button class="btn btn-light mx-2 d-none d-lg-block">
+                <button class="btn btn-light mx-1 d-none d-lg-block">
                     <i class="bi bi-grid-3x3-gap"></i>
                 </button>
-                <button class="btn btn-light mx-2">
+                <button class="btn btn-light mx-1">
                     <i class="bi bi-bell"></i>
                 </button>
-                <button class="btn btn-light ms-2 d-none d-sm-block">
+                <button class="btn btn-light ms-1">
                     <i class="bi bi-person-circle"></i>
-                </button>
-                <button class="btn btn-light ms-2 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
-                    <i class="bi bi-list"></i>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Sidebar móvil (Offcanvas) -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menú</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="d-flex flex-column">
-                <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
-                    <i class="bi bi-house-door me-3"></i>
-                    <span>Inicio</span>
-                </a>
-                <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
-                    <i class="bi bi-fire me-3"></i>
-                    <span>Tendencias</span>
-                </a>
-                <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
-                    <i class="bi bi-collection-play me-3"></i>
-                    <span>Suscripciones</span>
-                </a>
-                <hr>
-                <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
-                    <i class="bi bi-clock-history me-3"></i>
-                    <span>Historial</span>
-                </a>
-                <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
-                    <i class="bi bi-clock me-3"></i>
-                    <span>Ver más tarde</span>
-                </a>
-            </div>
+    <!-- Sidebar -->
+    <div class="sidebar bg-white d-none d-lg-block">
+        <div class="d-flex flex-column p-3">
+            <a href="#" class="d-flex align-items-center p-2 mb-1 text-dark text-decoration-none rounded">
+                <i class="bi bi-house-door me-3"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#" class="d-flex align-items-center p-2 mb-1 text-dark text-decoration-none rounded">
+                <i class="bi bi-fire me-3"></i>
+                <span>Tendencias</span>
+            </a>
+            <a href="#" class="d-flex align-items-center p-2 mb-1 text-dark text-decoration-none rounded">
+                <i class="bi bi-collection-play me-3"></i>
+                <span>Suscripciones</span>
+            </a>
+            <hr>
+            <a href="#" class="d-flex align-items-center p-2 mb-1 text-dark text-decoration-none rounded">
+                <i class="bi bi-clock-history me-3"></i>
+                <span>Historial</span>
+            </a>
+            <a href="#" class="d-flex align-items-center p-2 mb-1 text-dark text-decoration-none rounded">
+                <i class="bi bi-clock me-3"></i>
+                <span>Ver más tarde</span>
+            </a>
         </div>
     </div>
 
     <!-- Contenido principal -->
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar desktop -->
-            <div class="sidebar col-lg-2 bg-white d-none d-lg-block p-3">
-                <div class="d-flex flex-column">
-                    <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
-                        <i class="bi bi-house-door me-3"></i>
-                        <span>Inicio</span>
-                    </a>
-                    <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
-                        <i class="bi bi-fire me-3"></i>
-                        <span>Tendencias</span>
-                    </a>
-                    <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
-                        <i class="bi bi-collection-play me-3"></i>
-                        <span>Suscripciones</span>
-                    </a>
-                    <hr>
-                    <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
-                        <i class="bi bi-clock-history me-3"></i>
-                        <span>Historial</span>
-                    </a>
-                    <a href="#" class="sidebar-item d-flex align-items-center p-2 mb-1 text-dark text-decoration-none">
-                        <i class="bi bi-clock me-3"></i>
-                        <span>Ver más tarde</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Videos -->
-            <div class="col-lg-10 col-12 p-3">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
-                    <!-- Video 1 -->
-                    <div class="col">
-                        <div class="video-card card h-100 border-0 shadow-sm">
-                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" class="thumbnail card-img-top" alt="Miniatura">
-                            <div class="card-body">
-                                <h6 class="card-title">Cómo aprender Bootstrap 5</h6>
-                                <p class="card-text text-muted small">Web Dev Tutorials</p>
-                                <p class="card-text text-muted small">1.5M vistas · Hace 2 meses</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Video 2 -->
-                    <div class="col">
-                        <div class="video-card card h-100 border-0 shadow-sm">
-                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" class="thumbnail card-img-top" alt="Miniatura">
-                            <div class="card-body">
-                                <h6 class="card-title">Flexbox vs Grid CSS</h6>
-                                <p class="card-text text-muted small">CSS Masters</p>
-                                <p class="card-text text-muted small">800K vistas · Hace 4 meses</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Más videos... -->
-                    <div class="col">
-                        <div class="video-card card h-100 border-0 shadow-sm">
-                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" class="thumbnail card-img-top" alt="Miniatura">
-                            <div class="card-body">
-                                <h6 class="card-title">JavaScript Moderno</h6>
-                                <p class="card-text text-muted small">JS Expert</p>
-                                <p class="card-text text-muted small">1.2M vistas · Hace 1 mes</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col">
-                        <div class="video-card card h-100 border-0 shadow-sm">
-                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" class="thumbnail card-img-top" alt="Miniatura">
-                            <div class="card-body">
-                                <h6 class="card-title">React desde cero</h6>
-                                <p class="card-text text-muted small">React Pro</p>
-                                <p class="card-text text-muted small">950K vistas · Hace 3 meses</p>
-                            </div>
-                        </div>
+    <div class="main-content">
+        <div class="video-grid-container">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="card border-0 bg-transparent">
+                    <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" class="thumbnail card-img-top" alt="Video">
+                    <div class="card-body p-2">
+                        <h6 class="card-title mb-1">Cómo aprender Bootstrap 5</h6>
+                        <p class="card-text text-muted small mb-1">Web Dev Tutorials</p>
+                        <p class="card-text text-muted small">1.5M vistas · Hace 2 meses</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="card border-0 bg-transparent">
+                    <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" class="thumbnail card-img-top" alt="Video">
+                    <div class="card-body p-2">
+                        <h6 class="card-title mb-1">Flexbox vs Grid CSS</h6>
+                        <p class="card-text text-muted small mb-1">CSS Masters</p>
+                        <p class="card-text text-muted small">800K vistas · Hace 4 meses</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Más videos... -->
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Control del sidebar en móvil
+        document.querySelector('.toggle-sidebar').addEventListener('click', function() {
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            
+            sidebar.classList.toggle('d-none');
+            sidebar.classList.toggle('sidebar-visible');
+            
+            if (window.innerWidth < 992) {
+                mainContent.classList.toggle('main-content-full');
+            }
+        });
+
+        // Ajustar dinámicamente el grid al cambiar tamaño
+        function adjustVideoGrid() {
+            const container = document.querySelector('.video-grid-container');
+            const containerWidth = container.offsetWidth;
+            const videoCards = document.querySelectorAll('.video-card');
+            
+            // Lógica para ajustar columnas según ancho disponible
+            // (El CSS ya maneja esto, pero podemos añadir lógica JS si es necesario)
+        }
+
+        window.addEventListener('resize', adjustVideoGrid);
+        document.addEventListener('DOMContentLoaded', adjustVideoGrid);
+    </script>
 </body>
 </html>

@@ -1,53 +1,95 @@
+:root {
+    --sidebar-width: 240px;
+}
 body {
     background-color: #f9f9f9;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 .navbar {
     background-color: white !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 1030;
 }
 .sidebar {
-    width: 240px;
+    width: var(--sidebar-width);
     height: calc(100vh - 56px);
-    position: sticky;
+    position: fixed;
     top: 56px;
+    left: 0;
     overflow-y: auto;
+    transition: transform 0.3s ease;
 }
-.sidebar-item {
-    border-radius: 10px;
+.sidebar-hidden {
+    transform: translateX(calc(-1 * var(--sidebar-width)));
 }
-.sidebar-item:hover {
-    background-color: #f2f2f2;
+.main-content {
+    margin-left: var(--sidebar-width);
+    transition: margin-left 0.3s ease;
+    width: calc(100% - var(--sidebar-width));
+}
+.main-content-full {
+    margin-left: 0;
+    width: 100%;
+}
+.video-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+@media (max-width: 1399.98px) {
+    .video-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+@media (max-width: 1199.98px) {
+    .video-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+@media (max-width: 991.98px) {
+    .sidebar {
+        transform: translateX(calc(-1 * var(--sidebar-width)));
+    }
+    .sidebar-visible {
+        transform: translateX(0);
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    .video-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+@media (max-width: 767.98px) {
+    .video-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+@media (max-width: 575.98px) {
+    .video-grid-container {
+        grid-template-columns: 1fr;
+    }
 }
 .video-card {
     transition: transform 0.2s;
+    break-inside: avoid;
 }
 .video-card:hover {
     transform: scale(1.02);
 }
 .thumbnail {
-    height: 180px;
+    aspect-ratio: 16/9;
+    width: 100%;
     background-color: #ddd;
     object-fit: cover;
+    border-radius: 8px;
 }
 .search-container {
     max-width: 600px;
 }
-@media (max-width: 768px) {
-    .search-container {
-        order: 3;
-        width: 100%;
-        margin-top: 10px;
-    }
-    .navbar-brand img {
-        height: 20px;
-    }
-    .thumbnail {
-        height: 150px;
-    }
-}
-@media (max-width: 576px) {
-    .thumbnail {
-        height: 120px;
-    }
+.toggle-sidebar {
+    cursor: pointer;
 }
